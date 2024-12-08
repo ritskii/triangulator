@@ -1,0 +1,12 @@
+# ninja log v6
+18	444	7553844952523971	CMakeFiles/triangulator.dir/main.cpp.obj	3b87c42ba3a20d79
+445	522	7553844956797103	triangulator.exe	16ca949268fbc654
+2	226	7553846062101561	build.ninja	e849217954a8d0db
+20	483	7553850309748681	CMakeFiles/triangulator.dir/main.cpp.obj	3b87c42ba3a20d79
+484	573	7553850314383463	triangulator.exe	16ca949268fbc654
+19	460	7553850401478361	CMakeFiles/triangulator.dir/main.cpp.obj	3b87c42ba3a20d79
+461	535	7553850405896640	triangulator.exe	16ca949268fbc654
+6	472	7553851038368036	CMakeFiles/triangulator.dir/main.cpp.obj	3b87c42ba3a20d79
+472	552	7553851043023656	triangulator.exe	16ca949268fbc654
+19	463	7553852449007800	CMakeFiles/triangulator.dir/main.cpp.obj	3b87c42ba3a20d79
+464	541	7553852453458471	triangulator.exe	16ca949268fbc654
