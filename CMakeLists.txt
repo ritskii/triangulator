@@ -4,6 +4,8 @@ project(triangulator)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(triangulator main.cpp
-        IO/Reader.hpp
-        DataStructure/Octree.hpp
-        DataStructure/Octree.hpp)
+        DataStructures/Octree.hpp
+        DataStructures/Octree.hpp
+        IO/Input.hpp
+        DataStructures/VoxelGrid.hpp
+        IO/Output.hpp)

@@ -1,35 +1,42 @@
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <vector>
 #include <array>
-
+#include <cmath>
+#include <float.h>
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <unordered_map>
+#include <vector>
 struct Point {
     float X, Y, Z;
-    float NX, NY, NZ;
-    Point(float X, float Y, float Z) : X(X), Y(Y), Z(Z),
-                                       NX(NX), NY(NY), NZ(NZ) {}
+    Point(float X, float Y, float Z) : X(X), Y(Y), Z(Z) {}
 
-    Point() : X(0.0f), Y(0.0f), Z(0.0f), NX(0.0f), NY(0.0f), NZ(0.0f) {}
+    Point() : X(0.0f), Y(0.0f), Z(0.0f) {}
 
     void print() {
         std::cout << "Points: \n"
-        << "X: " << X << " Y: " << Y << " Z: " << Z
-        << "\nNormals: \n"
-        << "NX: " << NX << " NY: " << NY << " NZ: " << NZ << "\n\n";
+        << "X: " << X << " Y: " << Y << " Z: " << Z << "\n\n";
     }
 };
 
-#include "IO/Reader.hpp"
-#include "DataStructure/Octree.hpp"
+struct MinMax {
+    float MinX, MinY, MinZ;
+    float MaxX, MaxY, MaxZ;
+
+    MinMax()
+        : MinX(FLT_MAX), MinY(FLT_MAX), MinZ(FLT_MAX),
+          MaxX(-FLT_MAX), MaxY(-FLT_MAX), MaxZ(-FLT_MAX) {}
+};
+#include "IO/Output.hpp"
+#include "DataStructures/VoxelGrid.hpp"
+#include "DataStructures/Octree.hpp"
+#include "IO/Input.hpp"
 
 int main() {
-    std::vector<Point> PCloud = readXyz("../data/scatter.xyz");
-
-    Octree Tree(Point(-1.1, -1.1, -1.1), Point(1.1, 1.1, 1.1), PCloud);
-
-
+    auto [Num, PCloud, MM] = readXYZ("../data/table.xyz");
+    VoxelGrid Grid(PCloud, MM);
+    std::vector<Point> Result = Grid.filter();
+    writeXYZ("../data/result.xyz", Result);
 
     return 0;
 }
