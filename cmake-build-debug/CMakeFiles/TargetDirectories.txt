@@ -1,0 +1,3 @@
+C:/triangulator/cmake-build-debug/CMakeFiles/triangulator.dir
+C:/triangulator/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/triangulator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
